@@ -5,7 +5,7 @@ export const Header = () => {
     <div className={`paddings ${css.wrapper}`}>
       <div className={`flexCenter innerWidth ${css.container}`}>
         <div className={css.name}>Logo</div>
-        <ul>
+        <ul className={`flexCenter ${css.menu}`}>
           <li>
             <a href="">Services</a>
           </li>
