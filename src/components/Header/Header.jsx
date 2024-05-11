@@ -1,8 +1,16 @@
 import css from "./Header.module.scss";
+import { motion } from "framer-motion";
+import { headerVariants } from "../../utils/motion";
 
 export const Header = () => {
   return (
-    <div className={`paddings ${css.wrapper}`}>
+    <motion.div
+      initial="hidden"
+      whileInView="show"
+      variants={headerVariants}
+      viewport={{ once: false, amount: 0.25 }}
+      className={`paddings ${css.wrapper}`}
+    >
       <div className={`flexCenter innerWidth ${css.container}`}>
         <div className={css.name}>Logo</div>
         <ul className={`flexCenter ${css.menu}`}>
@@ -20,6 +28,6 @@ export const Header = () => {
           </li>
         </ul>
       </div>
-    </div>
+    </motion.div>
   );
 };
