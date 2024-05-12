@@ -1,10 +1,11 @@
 import css from "./Landing.module.scss";
 import person from "../../assets/person.png";
+import { motion } from "framer-motion";
 
 export const Landing = () => {
   return (
     <section className={`paddings ${css.wrapper}`}>
-      <div className={`innerWidth ${css.container}`}>
+      <motion.div className={`innerWidth ${css.container}`}>
         <div className={css.upperElements}>
           <span className="primaryText">
             Hey Ther, <br /> I'm Hero.
@@ -37,7 +38,7 @@ export const Landing = () => {
             <span>UI/UX DESIGNER</span>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
