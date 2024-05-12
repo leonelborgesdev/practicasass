@@ -20,6 +20,10 @@ export const Landing = () => {
           <img src={person} alt="" />
         </div>
 
+        <a className={css.email} href="mailto:leonel03t@gmail.com">
+          leonel03t@gmail.com
+        </a>
+
         <div className={css.lowerElements}>
           <div className={css.experience}>
             <div className="primaryText">10</div>
