@@ -1,3 +1,4 @@
+import { Body } from "./components/Body/Body";
 import { Header } from "./components/Header/Header";
 import { Landing } from "./components/Landing/Landing";
 import css from "./styles/app.module.scss";
@@ -7,6 +8,7 @@ function App() {
     <div className={`bg-primary ${css.container}`}>
       <Header />
       <Landing />
+      <Body />
     </div>
   );
 }
