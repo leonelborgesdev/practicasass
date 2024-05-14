@@ -1,4 +1,4 @@
-import { projectExperience } from "../../utils/data";
+import { WhatDoIHelp, projectExperience } from "../../utils/data";
 import css from "./Body.module.scss";
 
 export const Body = () => {
@@ -23,7 +23,16 @@ export const Body = () => {
             );
           })}
         </div>
-        <div className={css.rightSide}></div>
+        <div className={css.rightSide}>
+          <span className="primaryText">What do I help?</span>
+          {WhatDoIHelp.map((paragraph, i) => {
+            return (
+              <span className="secondaryText" key={i}>
+                {paragraph}
+              </span>
+            );
+          })}
+        </div>
       </div>
     </secction>
   );
