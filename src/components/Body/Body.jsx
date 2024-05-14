@@ -11,13 +11,13 @@ export const Body = () => {
           {projectExperience.map((exp, i) => {
             return (
               <div className={css.exp} key={i}>
-                <div className="flexCenter">
+                <div className="flexCenter" style={{ background: exp.bg }}>
                   <exp.icon size={25} color="white" />
                 </div>
 
                 <div>
                   <span>{exp.name}</span>
-                  <span>{exp.projects}</span>
+                  <span className="secondaryText">{exp.projects} Projects</span>
                 </div>
               </div>
             );
