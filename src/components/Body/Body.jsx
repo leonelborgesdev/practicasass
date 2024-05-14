@@ -1,7 +1,7 @@
 import { WhatDoIHelp, projectExperience } from "../../utils/data";
 import css from "./Body.module.scss";
 import { motion } from "framer-motion";
-import { fadeIn, staggerContainer } from "../../utils/motion";
+import { fadeIn, staggerContainer, textVariant } from "../../utils/motion";
 
 export const Body = () => {
   return (
@@ -35,7 +35,7 @@ export const Body = () => {
             );
           })}
         </div>
-        <div className={css.rightSide}>
+        <motion.div variants={textVariant(0.5)} className={css.rightSide}>
           <span className="primaryText">What do I help?</span>
           {WhatDoIHelp.map((paragraph, i) => {
             return (
@@ -54,7 +54,7 @@ export const Body = () => {
               <span className="secondaryText">Happi Clients</span>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </motion.section>
   );
