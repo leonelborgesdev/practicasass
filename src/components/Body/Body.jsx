@@ -32,14 +32,14 @@ export const Body = () => {
               </span>
             );
           })}
-          <div className={css.stats}>
-            <div className={css.stat}>
-              <span>285+</span>
-              <span>Projects Completed</span>
+          <div className={`flexCenter ${css.stats}`}>
+            <div className={`flexCenter ${css.stat}`}>
+              <span className="primaryText">285+</span>
+              <span className="secondaryText">Projects Completed</span>
             </div>
-            <div className={css.stat}>
-              <span>190+</span>
-              <span>Happi Clients</span>
+            <div className={`flexCenter ${css.stat}`}>
+              <span className="primaryText">190+</span>
+              <span className="secondaryText">Happi Clients</span>
             </div>
           </div>
         </div>
