@@ -1,0 +1,15 @@
+@import "../../styles/contants.scss";
+
+
+.wrapper{
+
+    .container{
+        flex-direction: column;
+        gap: 2rem;
+
+        .experiences{
+            width: 100%;
+            flex-direction: column;
+            gap: 1.4rem;        }
+    }
+}
