@@ -1,16 +1,28 @@
 import { WhatDoIHelp, projectExperience } from "../../utils/data";
 import css from "./Body.module.scss";
+import { motion } from "framer-motion";
+import { fadeIn, staggerContainer } from "../../utils/motion";
 
 export const Body = () => {
   return (
-    <secction className={css.wraper}>
+    <motion.section
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.25 }}
+      className={css.wraper}
+    >
       <div
         className={`paddings yPaddings flexCenter innerWidth ${css.container}`}
       >
         <div className={css.leftSide}>
           {projectExperience.map((exp, i) => {
             return (
-              <div className={css.exp} key={i}>
+              <motion.div
+                variants={fadeIn("right", "tween", (i + 1) * 0.5, 1)}
+                className={css.exp}
+                key={i}
+              >
                 <div className="flexCenter" style={{ background: exp.bg }}>
                   <exp.icon size={25} color="white" />
                 </div>
@@ -19,7 +31,7 @@ export const Body = () => {
                   <span>{exp.name}</span>
                   <span className="secondaryText">{exp.projects} Projects</span>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>
@@ -44,6 +56,6 @@ export const Body = () => {
           </div>
         </div>
       </div>
-    </secction>
+    </motion.section>
   );
 };
