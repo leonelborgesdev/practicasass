@@ -1,6 +1,7 @@
 import { Body } from "./components/Body/Body";
 import { Header } from "./components/Header/Header";
 import { Landing } from "./components/Landing/Landing";
+import { Works } from "./components/Works/Works";
 import css from "./styles/app.module.scss";
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <Header />
       <Landing />
       <Body />
+      <Works />
     </div>
   );
 }
