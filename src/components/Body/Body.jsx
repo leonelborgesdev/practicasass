@@ -32,6 +32,16 @@ export const Body = () => {
               </span>
             );
           })}
+          <div className={css.stats}>
+            <div className={css.stat}>
+              <span>285+</span>
+              <span>Projects Completed</span>
+            </div>
+            <div className={css.stat}>
+              <span>190+</span>
+              <span>Happi Clients</span>
+            </div>
+          </div>
         </div>
       </div>
     </secction>
