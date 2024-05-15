@@ -1,7 +1,12 @@
 import React from "react";
 import css from "./Works.module.scss";
 import { motion } from "framer-motion";
-import { staggerChildren } from "../../utils/motion";
+import {
+  fadeIn,
+  staggerChildren,
+  textVariant2,
+  zoomIn,
+} from "../../utils/motion";
 import { workExp } from "../../utils/data";
 
 export const Works = () => {
@@ -18,7 +23,11 @@ export const Works = () => {
         <div className={`flexCenter ${css.experiences}`}>
           {workExp.map((exp, i) => {
             return (
-              <div className={`flexCenter ${css.exp}`} key={i}>
+              <motion.div
+                variants={textVariant2}
+                key={i}
+                className={`flexCenter ${css.exp}`}
+              >
                 <div className={css.post}>
                   <h1>{exp.place}</h1>
                   <p>{exp.tenure}</p>
@@ -27,11 +36,14 @@ export const Works = () => {
                   <h1>{exp.role}</h1>
                   <p>{exp.detail}</p>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
-          <div className={css.progressbar}>
-            <div className={css.line}></div>
+          <motion.div variants={zoomIn(1, 1)} className={css.progressbar}>
+            <motion.div
+              variants={fadeIn("down", "tween", 2, 1.5)}
+              className={css.line}
+            ></motion.div>
             <div>
               <div
                 className={css.circle}
@@ -50,7 +62,7 @@ export const Works = () => {
                 style={{ background: "#EEC048" }}
               ></div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </motion.section>
