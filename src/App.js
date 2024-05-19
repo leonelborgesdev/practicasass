@@ -1,6 +1,7 @@
 import { Body } from "./components/Body/Body";
 import { Header } from "./components/Header/Header";
 import { Landing } from "./components/Landing/Landing";
+import { Portfolio } from "./components/Portfolio/Portfolio";
 import { Works } from "./components/Works/Works";
 import css from "./styles/app.module.scss";
 
@@ -11,6 +12,7 @@ function App() {
       <Landing />
       <Body />
       <Works />
+      <Portfolio />
     </div>
   );
 }
