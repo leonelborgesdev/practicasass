@@ -24,7 +24,7 @@ export const Portfolio = () => {
 
           <span className="secondaryText">Explore More Works</span>
         </div>
-        <div className={css.showCase}>
+        <div className={`flexCenter ${css.showCase}`}>
           <motion.img
             variants={fadeIn("up", "tween", 0.5, 0.6)}
             src={image}
