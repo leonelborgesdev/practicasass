@@ -1,6 +1,9 @@
 import css from "./Portfolio.module.scss";
 import { motion } from "framer-motion";
 import { fadeIn, staggerChildren } from "../../utils/motion";
+import image from "../../assets/image.png";
+import image1 from "../../assets/image1.png";
+import image2 from "../../assets/image2.png";
 
 export const Portfolio = () => {
   return (
@@ -24,17 +27,17 @@ export const Portfolio = () => {
         <div className={css.showCase}>
           <motion.img
             variants={fadeIn("up", "tween", 0.5, 0.6)}
-            src="./image"
+            src={image}
             alt=""
           />
           <motion.img
             variants={fadeIn("up", "tween", 0.5, 0.6)}
-            src="./image1"
+            src={image1}
             alt=""
           />
           <motion.img
             variants={fadeIn("up", "tween", 0.5, 0.6)}
-            src="./image2"
+            src={image2}
             alt=""
           />
         </div>
