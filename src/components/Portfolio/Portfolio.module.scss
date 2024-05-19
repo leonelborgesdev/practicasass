@@ -1,0 +1,24 @@
+@import "../../styles/contants.scss";
+
+.wrapper{
+    background-color: #fff;
+    overflow: hidden;
+
+    .container{
+        flex-direction: column;
+        gap: 2rem;
+
+        .heading{
+            width: 100%;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            >:nth-child(2){
+                text-decoration: underline;
+                color: orange;
+                cursor: pointer;
+            }
+
+        }
+    }
+}

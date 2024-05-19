@@ -15,7 +15,7 @@ export const Portfolio = () => {
       className={`paddings ${css.wrapper}`}
     >
       <div className={`innerWidth flexcenter ${css.container}`}>
-        <div className={css.heading}>
+        <div className={`flexCenter ${css.heading}`}>
           <div>
             <span className="primaryText">My Lastest Works</span>
 
