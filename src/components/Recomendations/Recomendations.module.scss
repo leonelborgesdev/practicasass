@@ -1,0 +1,15 @@
+@import '../../styles/contants.scss';
+
+.wrapper{
+    
+    .container{
+
+        .heading{
+            flex-direction: column;
+
+            p{
+                line-height: 30px;
+            }
+        }
+    }
+}
