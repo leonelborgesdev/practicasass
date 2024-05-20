@@ -2,6 +2,8 @@ import React from "react";
 import css from "./Recomendations.module.scss";
 import { motion } from "framer-motion";
 import { staggerChildren } from "../../utils/motion";
+import { sliderSettings } from "../../utils/data";
+import Slider from "react-slick";
 
 export const Recomendations = () => {
   return (
@@ -20,6 +22,12 @@ export const Recomendations = () => {
             work
           </p>
           <p>The process of submitting an aplication was quite cosy</p>
+        </div>
+
+        {/*  Carusel */}
+
+        <div className={css.comments}>
+          <Slider {...sliderSettings} className={css.slider}></Slider>
         </div>
       </div>
     </motion.section>
