@@ -13,7 +13,14 @@ export const Recomendations = () => {
       className={`paddings ${css.wrapper}`}
     >
       <div className={`yPaddings innerWidth ${css.container}`}>
-        People Recomendations
+        <div className={`flexCenter ${css.heading}`}>
+          <span className="primaryText">People talk about us</span>
+          <p style={{ marginTop: "2rem" }}>
+            I got a job that was in accordance width the salary and field to
+            work
+          </p>
+          <p>The process of submitting an aplication was quite cosy</p>
+        </div>
       </div>
     </motion.section>
   );
