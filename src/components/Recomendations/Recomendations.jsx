@@ -37,8 +37,8 @@ export const Recomendations = () => {
                   <div className={css.line}></div>
 
                   <div className={css.bio}>
-                    <span className={comment.name}></span>
-                    <span className={comment.post}></span>
+                    <span>{comment.name}</span>
+                    <span>{comment.post}</span>
                   </div>
                 </div>
               );
