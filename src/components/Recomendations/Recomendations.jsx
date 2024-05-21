@@ -2,7 +2,7 @@ import React from "react";
 import css from "./Recomendations.module.scss";
 import { motion } from "framer-motion";
 import { staggerChildren } from "../../utils/motion";
-import { sliderSettings } from "../../utils/data";
+import { comments, sliderSettings } from "../../utils/data";
 import Slider from "react-slick";
 
 export const Recomendations = () => {
@@ -26,8 +26,24 @@ export const Recomendations = () => {
 
         {/*  Carusel */}
 
-        <div className={css.comments}>
-          <Slider {...sliderSettings} className={css.slider}></Slider>
+        <div className={`yPaddings ${css.comments}`}>
+          <Slider {...sliderSettings} className={css.slider}>
+            {comments.map((comment, i) => {
+              return (
+                <div className={`flexCenter ${css.comment}`}>
+                  <img src={comment.img} alt="" />
+                  <p>{comment.comment}</p>
+
+                  <div className={css.line}></div>
+
+                  <div className={css.bio}>
+                    <span className={comment.name}></span>
+                    <span className={comment.post}></span>
+                  </div>
+                </div>
+              );
+            })}
+          </Slider>
         </div>
       </div>
     </motion.section>
