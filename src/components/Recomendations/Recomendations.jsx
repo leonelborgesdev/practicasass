@@ -1,7 +1,7 @@
 import React from "react";
 import css from "./Recomendations.module.scss";
 import { motion } from "framer-motion";
-import { staggerChildren } from "../../utils/motion";
+import { footerVariants, staggerChildren } from "../../utils/motion";
 import { comments, sliderSettings } from "../../utils/data";
 import Slider from "react-slick";
 
@@ -14,7 +14,10 @@ export const Recomendations = () => {
       viewport={{ once: false, amount: 0.25 }}
       className={`paddings ${css.wrapper}`}
     >
-      <div className={`yPaddings innerWidth ${css.container}`}>
+      <motion.div
+        variants={footerVariants}
+        className={`yPaddings innerWidth ${css.container}`}
+      >
         <div className={`flexCenter ${css.heading}`}>
           <span className="primaryText">People talk about us</span>
           <p style={{ marginTop: "2rem" }}>
@@ -30,7 +33,7 @@ export const Recomendations = () => {
           <Slider {...sliderSettings} className={css.slider}>
             {comments.map((comment, i) => {
               return (
-                <div className={`flexCenter ${css.comment}`}>
+                <div className={`flexCenter ${css.comment}`} key={i}>
                   <img src={comment.img} alt="" />
                   <p>{comment.comment}</p>
 
@@ -45,7 +48,7 @@ export const Recomendations = () => {
             })}
           </Slider>
         </div>
-      </div>
+      </motion.div>
     </motion.section>
   );
 };

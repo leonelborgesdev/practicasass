@@ -1,41 +1,53 @@
+import React, { useRef, useState } from "react";
 import css from "./Header.module.scss";
+import { BiMenuAltRight } from "react-icons/bi";
 import { motion } from "framer-motion";
 import { getMenuStyles, headerVariants } from "../../utils/motion";
-import { BiMenuAltRight } from "react-icons/bi";
-import { useState } from "react";
+import useOutsideAlerter from "../../hooks/useOutsideAlerter";
 import useHeaderShadow from "../../hooks/useHeaderShadow";
 
 export const Header = () => {
+  const menuRef = useRef(null);
   const [menuOpened, setMenuOpened] = useState(false);
   const headerShadow = useHeaderShadow();
+
+  //to handle click outside of sidebar on mobile
+  useOutsideAlerter({
+    menuRef,
+    setMenuOpened,
+  });
+
   return (
     <motion.div
+      variants={headerVariants}
       initial="hidden"
       whileInView="show"
-      variants={headerVariants}
-      viewport={{ once: false, amount: 0.25 }}
-      className={`paddings ${css.wrapper}`}
+      className={`bg-primary paddings ${css.wrapper}`}
+      viewport={{ once: true, amount: 0.25 }}
       style={{ boxShadow: headerShadow }}
     >
-      <div className={`flexCenter innerWidth ${css.container}`}>
+      <div className={`innerWidth ${css.container} flexCenter`}>
         <div className={css.name}>Logo</div>
         <ul
-          style={getMenuStyles(menuOpened)}
           className={`flexCenter ${css.menu}`}
+          ref={menuRef}
+          style={getMenuStyles(menuOpened)}
         >
           <li>
-            <a href="">Services</a>
+            <a href="#experties">Services</a>
           </li>
           <li>
-            <a href="">Experience</a>
+            <a href="#work">Experience</a>
           </li>
           <li>
-            <a href="">Portofolios</a>
+            <a href="#portfolio">Portfolio</a>
           </li>
           <li>
-            <a href="">Testimonial</a>
+            <a href="#people">Testimonials</a>
           </li>
         </ul>
+
+        {/* for medium and small screens */}
         <div
           className={css.menuIcon}
           onClick={() => setMenuOpened((prev) => !prev)}
