@@ -3,6 +3,7 @@ import { Header } from "./components/Header/Header";
 import { Landing } from "./components/Landing/Landing";
 import { Portfolio } from "./components/Portfolio/Portfolio";
 import { Recomendations } from "./components/Recomendations/Recomendations";
+import { Uploader } from "./components/Uploader/Uploader";
 import { Works } from "./components/Works/Works";
 import css from "./styles/app.module.scss";
 
@@ -15,6 +16,7 @@ function App() {
       <Works />
       <Portfolio />
       <Recomendations />
+      <Uploader />
     </div>
   );
 }
