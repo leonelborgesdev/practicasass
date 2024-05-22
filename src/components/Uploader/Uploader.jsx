@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { MdCloudUpload, MdDelete } from "react-icons/md";
 import { AiFillFileImage } from "react-icons/ai";
 import "./Uploader.css";
@@ -10,7 +10,14 @@ export const Uploader = () => {
     const { files } = e.target;
     if (files) {
       setImage(URL.createObjectURL(files[0]));
+      if (files[0]) {
+        setFileName(files[0].name);
+      }
     }
+  };
+  const handleClearImageSelct = () => {
+    setFileName("No selected File");
+    setImage(null);
   };
   return (
     <div className="uploader_body">
@@ -29,9 +36,19 @@ export const Uploader = () => {
         {image ? (
           <img src={image} width={120} alt={fileName} />
         ) : (
-          <MdCloudUpload color="#1475cf" size={60} />
+          <React.Fragment>
+            <MdCloudUpload color="#1475cf" size={60} />
+            <p>Browse Files to upload</p>
+          </React.Fragment>
         )}
       </form>
+      <section>
+        <AiFillFileImage color="#1475cf" />
+        <span>
+          {fileName}
+          <MdDelete size={30} onClick={handleClearImageSelct} />
+        </span>
+      </section>
     </div>
   );
 };
