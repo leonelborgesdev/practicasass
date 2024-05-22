@@ -6,13 +6,25 @@ import "./Uploader.css";
 export const Uploader = () => {
   const [image, setImage] = useState(null);
   const [fileName, setFileName] = useState("No selected file");
+  const handleChangeImage = (e) => {
+    const { files } = e.target;
+    if (files) {
+      setImage(URL.createObjectURL(files[0]));
+    }
+  };
   return (
     <div className="uploader_body">
       <form
         action=""
         onClick={() => document.querySelector(".input-field").click()}
       >
-        <input type="file" accept="image/*" className="input-field" hidden />
+        <input
+          type="file"
+          accept="image/*"
+          className="input-field"
+          hidden
+          onChange={handleChangeImage}
+        />
 
         {image ? (
           <img src={image} width={120} alt={fileName} />
