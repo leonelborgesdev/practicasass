@@ -4,6 +4,8 @@ import { AiFillFileImage } from "react-icons/ai";
 import "./Uploader.css";
 
 export const Uploader = () => {
+  const [image, setImage] = useState(null);
+  const [fileName, setFileName] = useState("No selected file");
   return (
     <div className="uploader_body">
       <form
@@ -11,6 +13,12 @@ export const Uploader = () => {
         onClick={() => document.querySelector(".input-field").click()}
       >
         <input type="file" accept="image/*" className="input-field" hidden />
+
+        {image ? (
+          <img src={image} width={120} alt={fileName} />
+        ) : (
+          <MdCloudUpload color="#1475cf" size={60} />
+        )}
       </form>
     </div>
   );
