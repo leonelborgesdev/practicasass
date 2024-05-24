@@ -1,4 +1,5 @@
 import { Body } from "./components/Body/Body";
+import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
 import { Landing } from "./components/Landing/Landing";
 import { Portfolio } from "./components/Portfolio/Portfolio";
@@ -17,6 +18,7 @@ function App() {
       <Portfolio />
       <Recomendations />
       <Uploader />
+      <Footer />
     </div>
   );
 }
