@@ -14,6 +14,7 @@ export const Portfolio = () => {
       viewport={{ once: false, amoutn: 0.25 }}
       className={`paddings ${css.wrapper}`}
     >
+      <a className="anchor" id="portfolio"></a>
       <div className={`innerWidth flexcenter ${css.container}`}>
         <div className={`flexCenter ${css.heading}`}>
           <div>
