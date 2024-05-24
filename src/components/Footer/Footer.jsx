@@ -1,10 +1,21 @@
 import React from "react";
 import css from "./Footer.module.scss";
+import { motion } from "framer-motion";
+import { footerVariants, staggerChildren } from "../../utils/motion";
 
 export const Footer = () => {
   return (
-    <section className={css.wrapper}>
-      <div className={css.container}>
+    <motion.section
+      variants={staggerChildren}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.25 }}
+      className={`paddings ${css.wrapper}`}
+    >
+      <motion.div
+        variants={footerVariants}
+        className={`innerWidth yPaddings flexCenter ${css.container}`}
+      >
         <div className={css.left}>
           <span className="primaryText">
             Let's make something <br /> amazing together
@@ -27,7 +38,7 @@ export const Footer = () => {
             <li>Experience</li>
           </div>
         </div>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 };
