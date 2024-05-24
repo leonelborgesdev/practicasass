@@ -6,6 +6,12 @@
     .container{
         gap: 2rem;
 
+        @media (max-width: $sm) {
+            
+            flex-direction: column;
+            gap: 2rem;
+            align-items: flex-start;
+        }
         .left{
             flex: 3;
 
@@ -37,6 +43,10 @@
 
             .menu{
 
+                @media (max-width: $sm) {
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                }
                 display: flex;
                 flex-direction: column;
                 gap: 2rem;
