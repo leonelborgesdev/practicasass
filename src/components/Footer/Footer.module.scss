@@ -23,5 +23,25 @@
                 }
             }
         }
+
+        .right{
+            flex: 1;
+
+            .info{
+                margin-bottom: 1rem;
+                >*{
+
+                    display: block;
+                }
+            }
+
+            .menu{
+
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                list-style: none;
+            }
+        }
     }
 }
