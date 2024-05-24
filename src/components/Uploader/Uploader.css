@@ -18,3 +18,9 @@
     cursor: pointer;
     border-radius: 5px;
 }
+
+.container_delete_image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

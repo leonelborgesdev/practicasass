@@ -42,12 +42,12 @@ export const Uploader = () => {
           </React.Fragment>
         )}
       </form>
-      <section>
-        <AiFillFileImage color="#1475cf" />
-        <span>
-          {fileName}
-          <MdDelete size={30} onClick={handleClearImageSelct} />
-        </span>
+      <section className="container_delete_image">
+        <AiFillFileImage size={20} color="#1475cf" />
+        <div>
+          <span>{fileName}</span>
+        </div>
+        <MdDelete size={20} onClick={handleClearImageSelct} />
       </section>
     </div>
   );
